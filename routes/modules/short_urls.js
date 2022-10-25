@@ -3,13 +3,14 @@ const router = express.Router()
 
 router.route('/')
   .get((req, res) => {
-    res.render('index')
+    res.send('List All URLs.')
+  })
+  .post((req, res) => {
+    res.send('Create new shortURLs.')
   })
 router.route('/:url_id')
-  .get((req, res) => {
+  .delete((req, res) => {
     const id = req.params.url_id
-    res.send(`Redirect with ${id}`)
+    res.send(`Delete the shortURLs. ${id}`)
   })
-
-
 module.exports = router
