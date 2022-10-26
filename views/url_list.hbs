@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Short URL List</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Original URL</th>
+        <th scope="col">Short URL</th>
+        <th scope="col">Clicked</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each shortURLs as |alias|}}
+      <tr>
+        <td scope="row">{{this.url}}</td>
+        <td><a href="http://localhost:3000/{{this.url_id}}">localhost:3000/{{this.url_id}}</a></td>
+        <td>{{this.clicked}}</td>
+        <td>{{this.description}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
