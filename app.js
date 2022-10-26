@@ -4,6 +4,8 @@ const app = express()
 const PORT = 3000
 const routes = require('./routes')
 
+//Set mongoose
+require('./config/mongoose.js')
 //Set view engine
 app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', '.hbs')
@@ -11,7 +13,9 @@ app.set('view engine', '.hbs')
 app.use(express.urlencoded({ extended: true}))
 //Set routes
 app.use(routes)
-
+app.use((req, res) => {
+  res.status(404).send('The Page or Short URL is not found!')
+})
 app.listen(PORT, () => {
   console.log(`The app is listen on http://localhost:${PORT}`)
 })
