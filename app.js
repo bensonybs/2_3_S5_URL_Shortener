@@ -13,6 +13,7 @@ app.set('view engine', '.hbs')
 app.use(express.urlencoded({ extended: true}))
 //Set routes
 app.use(routes)
+//Set 404 page
 app.use((req, res) => {
   res.status(404).send('The Page or Short URL is not found!')
 })

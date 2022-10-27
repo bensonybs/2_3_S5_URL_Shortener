@@ -1,7 +1,33 @@
-<h1 class="primary">URL Shortener</h1>
-<img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
-  alt="shortener image" srcset="" class="img-thumbnail">
-<form action="" method="post">
-  <input type="url" required placeholder="Paste URL here">
-  <button type="submit" class="btn btn-primary">Shorten</button>
-</form>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <h1 class="primary">URL Shortener</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
+        alt="shortener image" class="img-thumbnail" style="width:200px">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form action="/short_urls" method="post">
+        <input type="url" required placeholder="Paste URL here" name="url">
+        <button type="submit" class="btn btn-primary">Shorten</button>
+      </form>
+    </div>
+  </div>
+  {{#if shorturl}}
+  <div class="row">
+    <div class="col">
+      {{replyMsg}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a href="/{{shorturl.url_id}}">localhost:3000/{{shorturl.url_id}}</a>
+    </div>
+  </div>
+  {{/if}}
+</div>
