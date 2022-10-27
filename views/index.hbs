@@ -1,16 +1,21 @@
-<div class="container text-center">
-  <div class="row">
+<div class="container">
+  <div class="row text-end">
+    <div class="col">
+      <a href="/short_urls">Short URL List</a>
+    </div>
+  </div>
+  <div class="row text-center">
     <div class="col">
       <h1 class="primary">URL Shortener</h1>
     </div>
   </div>
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       <img src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
         alt="shortener image" class="img-thumbnail" style="width:200px">
     </div>
   </div>
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       <form action="/short_urls" method="post">
         <input type="url" required placeholder="Paste URL here" name="url">
@@ -19,14 +24,14 @@
     </div>
   </div>
   {{#if shorturl}}
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
       {{replyMsg}}
     </div>
   </div>
-  <div class="row">
+  <div class="row text-center">
     <div class="col">
-      <a href="/{{shorturl.url_id}}">localhost:3000/{{shorturl.url_id}}</a>
+      <a href="/{{shorturl.url_id}}" target="_blank">localhost:3000/{{shorturl.url_id}}</a>
     </div>
   </div>
   {{/if}}

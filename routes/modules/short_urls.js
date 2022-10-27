@@ -33,13 +33,20 @@ router.route('/')
           replyMsg = 'Shorten the URL.'
           ShortURL.create(shorturl)
         }
-        return res.render('index', {shorturl, replyMsg})
+        return res.render('index', { shorturl, replyMsg })
       })
       .catch(error => console.log(error))
   })
 router.route('/:url_id')
   .delete((req, res) => {
     const id = req.params.url_id
-    res.send(`Delete the shortURLs. ${id}`)
+    ShortURL.findOne({ url_id: id })
+      .then(shorturl => {
+        return shorturl.delete()
+      })
+      .then(() => {
+        console.log('User delete short URL.')
+        return res.redirect('/short_urls')
+      })
   })
 module.exports = router

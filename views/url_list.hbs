@@ -1,4 +1,5 @@
 <div class="container">
+  <div class="row text-end"><a href="/">Main Page</a></div>
   <h1>Short URL List</h1>
   <table class="table table-striped">
     <thead>
@@ -7,15 +8,17 @@
         <th scope="col">Short URL</th>
         <th scope="col">Clicked</th>
         <th scope="col">Description</th>
+        <th scope="col">More</th>
       </tr>
     </thead>
     <tbody>
       {{#each shortURLs as |alias|}}
       <tr>
         <td scope="row">{{this.url}}</td>
-        <td><a href="http://localhost:3000/{{this.url_id}}">localhost:3000/{{this.url_id}}</a></td>
+        <td><a href="http://localhost:3000/{{this.url_id}}" target="_blank">localhost:3000/{{this.url_id}}</a></td>
         <td>{{this.clicked}}</td>
         <td>{{this.description}}</td>
+        <td><form action="/short_urls/{{this.url_id}}?_method=DELETE" method="post"><button>Delete</button></form></td>
       </tr>
       {{/each}}
     </tbody>
