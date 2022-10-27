@@ -19,7 +19,7 @@ This is a hands-on project of [ALPHAcamp](https://tw.alphacamp.co/).
 7. Go to [http://localhost:3000](http://localhost:3000) in the browser to see the website. 
 ## Demo
 1. Input URL to create new short URL.
-   ![create_url](/public/images/create_url.JPG)
+   ![create_url](/public/images/create_url.JPG)   
    If the URL you would like to shorten is already in the database, the stored short URL will show.
    ![url_exist](/public/images/url_exist.JPG)
 2. You can browse stored short URLs in 'Short URL List'.
