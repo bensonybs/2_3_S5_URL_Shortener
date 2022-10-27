@@ -26,7 +26,7 @@ This is a hands-on project of [ALPHAcamp](https://tw.alphacamp.co/).
    ![url_list](/public/images/url_list.JPG)
 # Process Flow Chart
 The app process flow chart is showed below.   
-[draw.io](/public/URL%20Shortener.drawio.html)
+![draw.io](/public/images/URL_Shortener.drawio.png)
 # Future Update
 1. Let user add and edit short URL description.
 2. User authentication.
