@@ -30,10 +30,11 @@ router.route('/')
             url_id: urlId,
           }
           console.log('User create a new short URL.')
-          replyMsg = 'Shorten the URL.'
+          replyMsg = 'Shorten the URL Successfully.'
           ShortURL.create(shorturl)
         }
-        return res.render('index', { shorturl, replyMsg })
+        const showForm = false
+        return res.render('index', { shorturl, replyMsg, showForm })
       })
       .catch(error => console.log(error))
   })

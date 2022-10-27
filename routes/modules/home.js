@@ -4,7 +4,8 @@ const router = express.Router()
 
 router.route('/')
   .get((req, res) => {
-    res.render('index')
+    const showForm = true
+    res.render('index', {showForm})
   })
 router.route('/:url_id')
   .get((req, res, next) => {

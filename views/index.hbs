@@ -16,14 +16,18 @@
         alt="shortener image" class="img-thumbnail" style="width:200px">
     </div>
   </div>
+  {{#if showForm}}
   <div class="row text-center">
-    <div class="col">
-      <form action="/short_urls" method="post">
-        <input type="url" required placeholder="Paste URL here" name="url">
+    <form action="/short_urls" method="post">
+      <div class="col m-2">
+        <input type="url" required placeholder="Paste URL here" name="url" size="50">
+      </div>
+      <div class="col">
         <button type="submit" class="btn btn-primary">Shorten</button>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
+  {{/if}}
   {{#if shorturl}}
   <div class="row text-center m-2">
     <div class="col alert alert-primary" role="alert">
