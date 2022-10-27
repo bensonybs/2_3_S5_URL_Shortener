@@ -18,7 +18,7 @@ router.route('/')
       .then(shorturl => {
         let replyMsg = ''
         if (shorturl) {
-          // Short URL exist
+          // Old short URL exist, return original one
           console.log('User post a existed URL.')
           console.log(shorturl)
           replyMsg = 'The URL is already existed.'
