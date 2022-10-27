@@ -14,6 +14,8 @@ app.engine('.hbs', exphbs.engine({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', '.hbs')
 // Set body parser
 app.use(express.urlencoded({ extended: true}))
+// Set static file
+app.use(express.static('public'))
 // Set routes
 app.use(routes)
 // Set 404 page

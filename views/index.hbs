@@ -6,7 +6,7 @@
   </div>
   <div class="row text-center">
     <div class="col">
-      <h1 class="primary">URL Shortener</h1>
+      <h1>URL Shortener</h1>
     </div>
   </div>
   <div class="row text-center">
@@ -24,14 +24,17 @@
     </div>
   </div>
   {{#if shorturl}}
-  <div class="row text-center">
-    <div class="col">
+  <div class="row text-center m-2">
+    <div class="col alert alert-primary" role="alert">
       {{replyMsg}}
     </div>
   </div>
   <div class="row text-center">
     <div class="col">
-      <a href="/{{shorturl.url_id}}" target="_blank">localhost:3000/{{shorturl.url_id}}</a>
+      <span class="m-1">
+        <a href="/{{shorturl.url_id}}" target="_blank" id="short_url">localhost:3000/{{shorturl.url_id}}</a>
+      </span>
+      <button onclick="copyToClipBoard('short_url')" class="btn btn-outline-primary">Copy</button>
     </div>
   </div>
   {{/if}}
